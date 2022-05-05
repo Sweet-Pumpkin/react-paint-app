@@ -1,1 +1,1 @@
-# react-paint-app
+# React로 그림판 만들기

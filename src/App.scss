@@ -1,0 +1,32 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  .canvasCon {
+    width: 700px;
+    height: 540px;
+    background-image: url(./img/notebook_01.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .canvas {
+      width: 550px;
+      height: 450px;
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 53%;
+      transform: translate(-50%, -50%);
+      border: 3px solid rgb(171, 184, 206);
+      border-radius: 15px;
+      box-sizing: border-box;
+      background-image: url(./img/paint-pumpkin300.png);
+      background-repeat: no-repeat;
+      background-size: 30%;
+      background-position: center;
+    }
+  }
+}
