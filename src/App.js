@@ -8,7 +8,6 @@ function App() {
     let painting = false;
 
     const canvas = canvasRef.current;
-
     canvas.width = 550;
     canvas.height = 450;
 
@@ -20,8 +19,7 @@ function App() {
     canvas.addEventListener("mousedown", startDraw);
     canvas.addEventListener("mouseup", stopDraw);
     canvas.addEventListener("mouseleave", stopDraw);
-    canvas.addEventListener("click", colorSelect);
-
+    
     function draw(event) {
       const x = event.offsetX;
       const y = event.offsetY;
@@ -38,9 +36,6 @@ function App() {
     }
     function stopDraw() {
       painting = false;
-    }
-    function colorSelect() {
-      console.log("fuck!");
     }
   }, []);
 
