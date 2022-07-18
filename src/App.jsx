@@ -6,38 +6,34 @@ import { CanvasStyle } from "./styles/cavas";
 export default function App() {
   // useRef
   const canvasRef = useRef(null);
-  // ctx
-  const [ctx, setCtx] = useState(null);
+  // getCtx
+  const [getCtx, setGetCtx] = useState(null);
   // painting state
   const [painting, setPainting] = useState(false);
 
   useEffect(() => {
     // canvas useRef
     const canvas = canvasRef.current;
-    setCtx(canvas.getContext("2d"));
-    // canvas size
-    const CANVAS_WITDH_SIZE = 650;
-    const CANVAS_HEIGHT_SIZE = 540;
-    canvas.witdth = CANVAS_WITDH_SIZE;
-    canvas.height = CANVAS_HEIGHT_SIZE;
-
-    ctx.strokeStyle = "#000000";
+    canvas.width = 650;
+    canvas.height = 540;
+    const ctx = canvas.getContext("2d");
+    ctx.lineJoin = "round";
     ctx.lineWidth = 2.5;
-
+    ctx.strokeStyle = "#000000";
+    setGetCtx(ctx);
   }, []);
 
   const drawFn = e => {
     // mouse position
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
-    
+    const mouseX = e.nativeEvent.offsetX;
+    const mouseY = e.nativeEvent.offsetY;
     // drawing
     if (!painting) {
-      ctx.beginPath();
-      ctx.moveTo(mouseX, mouseY);
+      getCtx.beginPath();
+      getCtx.moveTo(mouseX, mouseY);
     } else {
-      ctx.lineTo(mouseX, mouseY);
-      ctx.stroke();
+      getCtx.lineTo(mouseX, mouseY);
+      getCtx.stroke();
     }
     
   }

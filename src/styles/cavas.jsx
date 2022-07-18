@@ -2,6 +2,7 @@
 import styled from "styled-components";
 // image
 import backgroundImage from "../assets/notebook_01.png"
+import canvasBackgroundImage from "../assets/soeasy.png";
 
 export const CanvasStyle = styled.div`
   .view {
@@ -14,7 +15,7 @@ export const CanvasStyle = styled.div`
 
   .canvasWrap {
     width: 800px;
-    height: 600px;
+    height: 620px;
     background-image: url(${backgroundImage});
     background-size: cover;
     position: relative;
@@ -22,10 +23,11 @@ export const CanvasStyle = styled.div`
 
   .canvas {
     position: absolute;
+    border-radius: 10px;
     top: 40px;
     left: 100px; 
-    border: 1px solid red;
     width: 650px;
     height: 540px;
+    background-image: url(${canvasBackgroundImage});
   }
 `
