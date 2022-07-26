@@ -10,6 +10,8 @@ export default function App() {
   const canvasRef = useRef(null);
   // getCtx
   const [getCtx, setGetCtx] = useState(null);
+  // canvas
+  const [getCanvas, setGetCanvas] = useState(null);
   // painting state
   const [painting, setPainting] = useState(false);
 
@@ -23,6 +25,7 @@ export default function App() {
     ctx.lineWidth = 2.5;
     ctx.strokeStyle = "#000000";
     setGetCtx(ctx);
+    setGetCanvas(canvas);
   }, []);
 
   const drawFn = e => {
@@ -54,7 +57,10 @@ export default function App() {
           >
           </canvas>
         </div>
-        <MenuBar />
+        <MenuBar 
+          getCtx={getCtx}
+          getCanvas={getCanvas}
+        />
       </div>
     </CanvasStyle>
   )

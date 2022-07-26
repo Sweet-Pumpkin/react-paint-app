@@ -44,14 +44,18 @@ export const MenuBarStyle = styled.ul`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
-    margin-right: 20px;
+    width: 70px;
+    height: 70px;
+    margin-right: 30px;
     border: 1px solid #000000;
     border-radius: 50px;
     cursor: pointer;
     &:last-child {
       margin-right: 0px;
     }
+  }
+
+  .icons {
+    font-size: 42px;
   }
 `

@@ -9,23 +9,31 @@ import SaveIcon from '@mui/icons-material/Save';
 // style 
 import { MenuBarStyle } from "../styles/cavas";
 
-export default function MenuBar() {
+export default function MenuBar({ getCtx, getCanvas }) {
+  // reset button
+  const onReset = () => {
+    getCtx.clearRect(0, 0, getCanvas.width, getCanvas.height);
+  }
+
   return (
     <MenuBarStyle className="menuBar">
       <li>
-        <FormatPaintIcon />
+        <FormatPaintIcon className="icons" />
       </li>
       <li>
-        <BorderColorIcon />
+        <BorderColorIcon className="icons" />
       </li>
       <li>
-        <PaletteIcon />
+        <PaletteIcon className="icons" />
       </li>
       <li>
-        <RestartAltIcon />
+        <RestartAltIcon 
+          onClick={onReset}
+          className="icons" 
+        />
       </li>
       <li>
-        <SaveIcon />
+        <SaveIcon className="icons" />
       </li>
     </MenuBarStyle>
   )
