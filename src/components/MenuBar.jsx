@@ -10,9 +10,18 @@ import SaveIcon from '@mui/icons-material/Save';
 import { MenuBarStyle } from "../styles/cavas";
 
 export default function MenuBar({ getCtx, getCanvas }) {
+
   // reset button
   const onReset = () => {
     getCtx.clearRect(0, 0, getCanvas.width, getCanvas.height);
+  }
+  // save image button
+  const onSave = () => {
+    const image = getCanvas.toDataURL();
+    const link = document.createElement("a");
+    link.href = image;
+    link.download = "PaintJs";
+    link.click();
   }
 
   return (
@@ -33,7 +42,10 @@ export default function MenuBar({ getCtx, getCanvas }) {
         />
       </li>
       <li>
-        <SaveIcon className="icons" />
+        <SaveIcon 
+          className="icons" 
+          onClick={onSave}
+        />
       </li>
     </MenuBarStyle>
   )
