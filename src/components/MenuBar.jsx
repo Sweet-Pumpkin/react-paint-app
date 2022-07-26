@@ -20,7 +20,7 @@ export default function MenuBar({ getCtx, getCanvas }) {
     const image = getCanvas.toDataURL();
     const link = document.createElement("a");
     link.href = image;
-    link.download = "PaintJs";
+    link.download = "IMAGE";
     link.click();
   }
 
