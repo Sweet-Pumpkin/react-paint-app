@@ -35,17 +35,13 @@ export default function MenuBar({ getCtx, getCanvas }) {
       <li>
         <PaletteIcon className="icons" />
       </li>
-      <li>
-        <RestartAltIcon 
-          onClick={onReset}
-          className="icons" 
-        />
+      {/* RESET BUTTON */}
+      <li onClick={onReset}>
+        <RestartAltIcon className="icons" />
       </li>
-      <li>
-        <SaveIcon 
-          className="icons" 
-          onClick={onSave}
-        />
+      {/* SAVE BUTTON */}
+      <li onClick={onSave}>
+        <SaveIcon className="icons" />
       </li>
     </MenuBarStyle>
   )
