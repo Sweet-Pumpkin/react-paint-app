@@ -1,5 +1,7 @@
 // react
 import React, { useRef, useEffect, useState } from "react";
+// components
+import MenuBar from "./components/MenuBar";
 // style
 import { CanvasStyle } from "./styles/cavas";
 
@@ -48,10 +50,11 @@ export default function App() {
             onMouseDown={() => setPainting(true)}
             onMouseUp={() => setPainting(false)}
             onMouseMove={e => drawFn(e)}
-            onMouseLeave={e => drawFn(e)}
+            onMouseLeave={() => setPainting(false)}
           >
           </canvas>
         </div>
+        <MenuBar />
       </div>
     </CanvasStyle>
   )

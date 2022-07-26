@@ -6,11 +6,10 @@ import canvasBackgroundImage from "../assets/soeasy.png";
 
 export const CanvasStyle = styled.div`
   .view {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .canvasWrap {
@@ -29,5 +28,30 @@ export const CanvasStyle = styled.div`
     width: 650px;
     height: 540px;
     background-image: url(${canvasBackgroundImage});
+  }
+
+  .menuBar {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+`
+
+export const MenuBarStyle = styled.ul`
+  list-style: none;
+
+  li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border: 1px solid #000000;
+    border-radius: 50px;
+    cursor: pointer;
+    &:last-child {
+      margin-right: 0px;
+    }
   }
 `
