@@ -1,8 +1,16 @@
 // styled-components
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 // image
 import backgroundImage from "../assets/notebook_01.png"
 import canvasBackgroundImage from "../assets/soeasy.png";
+
+const fadeIn = keyframes `
+  0% {
+    bottom: 75px
+  } 100% {
+    bottom: 85px;
+  }
+`
 
 export const CanvasStyle = styled.div`
   .view {
@@ -38,24 +46,58 @@ export const CanvasStyle = styled.div`
 `
 
 export const MenuBarStyle = styled.ul`
-  list-style: none;
 
-  li {
+  .iconWrap {
+    position: relative;
+    cursor: pointer; 
+    margin: 0 15px;
+    transition: .3s;
+    &:hover {
+      margin-top: -10px;
+      .selectors {
+        display: flex;
+      }
+    }
+  }
+
+  .icons {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 70px;
     height: 70px;
-    margin-right: 30px;
     border: 1px solid #000000;
     border-radius: 50px;
-    cursor: pointer;
-    &:last-child {
-      margin-right: 0px;
+    .icon {
+      font-size: 42px;
     }
   }
 
-  .icons {
-    font-size: 42px;
+  .colorSelector {
+    position: absolute;
+    display: none;
+    flex-wrap: wrap;
+    bottom: 85px;
+    left: -218px;
+    width: 500px;
+    height: 115px;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    animation: ${fadeIn} .3s ease-out;
+
+    .colorBox {
+      width: 55px;
+      height: 55px;
+      border: 1px solid blue;
+      border-radius: 50px;
+      margin: 2px;
+      transition: .3s;
+      box-sizing: border-box;
+      &:hover {
+        width: 65px;
+        height: 65px;
+      }
+    }
   }
 `
